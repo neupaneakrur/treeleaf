@@ -1,7 +1,14 @@
 import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import logger from './logger';
 import './App.css';
 
 function App() {
+  // Log a message when the component mounts
+  useEffect(() => {
+    logger.info('App component mounted');
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
