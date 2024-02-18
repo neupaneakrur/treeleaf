@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: janus-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: janus
+  template:
+    metadata:
+      labels:
+        app: janus
+    spec:
+      containers:
+      - name: janus
+        image: canyan/janus-gateway:latest
+        ports:
+        - containerPort: 8088
